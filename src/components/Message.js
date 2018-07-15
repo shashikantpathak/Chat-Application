@@ -1,5 +1,5 @@
 import React from 'react';
-
+// stateless component
 function Message(props) {  
     return (
         <div className="message">
