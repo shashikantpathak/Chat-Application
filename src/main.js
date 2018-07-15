@@ -26,7 +26,9 @@ class Main extends Component {
     componentDidMount() {
         const chatManager = new Chatkit.ChatManager({
             instanceLocator,
+//             copy your username in place of userId
             userId: 'csuraz',
+//             make connection with ChatKit api
             tokenProvider: new Chatkit.TokenProvider({
                 url: tokenUrl
             })
@@ -39,7 +41,7 @@ class Main extends Component {
         })
         .catch(err => console.log('error on connecting: ', err))
     }
-    
+//     get the room 
     getRooms() {
         this.currentUser.getJoinableRooms()
         .then(joinableRooms => {
@@ -50,7 +52,7 @@ class Main extends Component {
         })
         .catch(err => console.log('error on joinableRooms: ', err))
     }
-    
+//     subscribe to the room 
     subscribeToRoom(roomId) {
         this.setState({ messages: [] })
         this.currentUser.subscribeToRoom({
@@ -71,14 +73,14 @@ class Main extends Component {
         })
         .catch(err => console.log('error on subscribing to room: ', err))
     }
-    
+//     send messages to the subscribed room
     sendMessage(text) {
         this.currentUser.sendMessage({
             text,
             roomId: this.state.roomId
         })
     }
-    
+//     create new room
     createRoom(name) {
         this.currentUser.createRoom({
             name
