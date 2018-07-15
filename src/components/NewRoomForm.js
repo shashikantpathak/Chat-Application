@@ -16,7 +16,7 @@ class NewRoomForm extends Component {
             roomName: e.target.value
         })
     }
-    
+//     create a new room
     handleSubmit(e) {
         e.preventDefault()
         this.props.createRoom(this.state.roomName)
