@@ -2,11 +2,13 @@ import React, { Component}  from 'react';
 
 class RoomList extends Component {
     render () {
+//         order the rooms based on the criteria which room is opened and in use
         const orderedRooms = [...this.props.rooms].sort((a, b) => a.id > b.id)
         return (
             <div className="rooms-list">
                 <ul>
                 <h3>Your rooms:</h3>
+//             check the status of room in use
                     {orderedRooms.map(room => {
                         const active = room.id === this.props.roomId ? 'active' : '';
                         return (
