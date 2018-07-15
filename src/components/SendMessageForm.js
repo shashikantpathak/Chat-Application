@@ -10,13 +10,13 @@ class SendMessageForm extends Component {
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
     }
-    
+//     store the value input by user
     handleChange(e) {
         this.setState({
             message: e.target.value
         })
     }
-    
+//     submit the message on click
     handleSubmit(e) {
         e.preventDefault()
         this.props.sendMessage(this.state.message)
